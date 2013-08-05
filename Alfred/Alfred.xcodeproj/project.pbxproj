@@ -391,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Alfred/Alfred-Prefix.pch";
 				INFOPLIST_FILE = "Alfred/Alfred-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,6 +404,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Alfred/Alfred-Prefix.pch";
 				INFOPLIST_FILE = "Alfred/Alfred-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,6 +459,7 @@
 				EB7A7DD317B008B70011A137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB7A7DD417B008B70011A137 /* Build configuration list for PBXNativeTarget "AlfredTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +468,7 @@
 				EB7A7DD617B008B70011A137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
