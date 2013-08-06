@@ -13,9 +13,8 @@
 {
     [super setUp];
     
-    NSBundle *bundle =
-    [NSBundle bundleForClass:NSClassFromString(@"ALFAppDelegate")];
-    NSManagedObjectModel *mom = [NSManagedObjectModel mergedModelFromBundles:[NSArray arrayWithObject:bundle]];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Alfred" withExtension:@"momd"];
+    NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     STAssertTrue([psc addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:NULL] ? YES : NO, @"Should be able to add in-memory store");
     self.moc = [[NSManagedObjectContext alloc] init];
