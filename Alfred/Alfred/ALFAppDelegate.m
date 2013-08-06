@@ -3,7 +3,7 @@
 //  Alfred
 //
 //  Created by Steven Boles on 8/5/13.
-//  Copyright (c) 2013 Mobian Solutions. All rights reserved.
+//  Copyright (c) 2013 Rally Software. All rights reserved.
 //
 
 #import "ALFAppDelegate.h"
@@ -19,12 +19,12 @@
     // Insert code here to initialize your application
 }
 
-// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.mobiansolutions.Alfred" in the user's Application Support directory.
+// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.rally.Alfred" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"com.mobiansolutions.Alfred"];
+    return [appSupportURL URLByAppendingPathComponent:@"com.rally.Alfred"];
 }
 
 // Creates if necessary and returns the managed object model for the application.
