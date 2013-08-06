@@ -203,7 +203,7 @@
 			attributes = {
 				CLASSPREFIX = ALF;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Mobian Solutions";
+				ORGANIZATIONNAME = "Rally Software";
 			};
 			buildConfigurationList = EB7A7D9817B008B70011A137 /* Build configuration list for PBXProject "Alfred" */;
 			compatibilityVersion = "Xcode 3.2";
