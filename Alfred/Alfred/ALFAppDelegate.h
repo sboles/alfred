@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ALFMenuController.h"
 
 @interface ALFAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -15,6 +16,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) ALFMenuController *menuController;
 
 - (IBAction)saveAction:(id)sender;
 
