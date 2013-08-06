@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB33A1D217B12FE900D788CE /* ALFProjectDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33A1D117B12FE900D788CE /* ALFProjectDataTests.m */; };
+		EB33A1D817B1386A00D788CE /* ALFAbstractDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33A1D717B1386A00D788CE /* ALFAbstractDataTests.m */; };
 		EB7A7DA117B008B70011A137 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DA017B008B70011A137 /* Cocoa.framework */; };
 		EB7A7DAB17B008B70011A137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7A7DA917B008B70011A137 /* InfoPlist.strings */; };
 		EB7A7DAD17B008B70011A137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7A7DAC17B008B70011A137 /* main.m */; };
@@ -17,7 +19,6 @@
 		EB7A7DC217B008B70011A137 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DC117B008B70011A137 /* SenTestingKit.framework */; };
 		EB7A7DC317B008B70011A137 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DA017B008B70011A137 /* Cocoa.framework */; };
 		EB7A7DCB17B008B70011A137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7A7DC917B008B70011A137 /* InfoPlist.strings */; };
-		EB7A7DCE17B008B70011A137 /* AlfredTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7A7DCD17B008B70011A137 /* AlfredTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB33A1D017B12FE900D788CE /* ALFProjectDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFProjectDataTests.h; sourceTree = "<group>"; };
+		EB33A1D117B12FE900D788CE /* ALFProjectDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFProjectDataTests.m; sourceTree = "<group>"; };
+		EB33A1D617B1386A00D788CE /* ALFAbstractDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFAbstractDataTests.h; sourceTree = "<group>"; };
+		EB33A1D717B1386A00D788CE /* ALFAbstractDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFAbstractDataTests.m; sourceTree = "<group>"; };
 		EB7A7D9D17B008B70011A137 /* Alfred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alfred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7A7DA017B008B70011A137 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EB7A7DA317B008B70011A137 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,8 +54,6 @@
 		EB7A7DC117B008B70011A137 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB7A7DC817B008B70011A137 /* AlfredTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlfredTests-Info.plist"; sourceTree = "<group>"; };
 		EB7A7DCA17B008B70011A137 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EB7A7DCC17B008B70011A137 /* AlfredTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlfredTests.h; sourceTree = "<group>"; };
-		EB7A7DCD17B008B70011A137 /* AlfredTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlfredTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +143,11 @@
 		EB7A7DC617B008B70011A137 /* AlfredTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB7A7DCC17B008B70011A137 /* AlfredTests.h */,
-				EB7A7DCD17B008B70011A137 /* AlfredTests.m */,
 				EB7A7DC717B008B70011A137 /* Supporting Files */,
+				EB33A1D017B12FE900D788CE /* ALFProjectDataTests.h */,
+				EB33A1D117B12FE900D788CE /* ALFProjectDataTests.m */,
+				EB33A1D617B1386A00D788CE /* ALFAbstractDataTests.h */,
+				EB33A1D717B1386A00D788CE /* ALFAbstractDataTests.m */,
 			);
 			path = AlfredTests;
 			sourceTree = "<group>";
@@ -275,7 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB7A7DCE17B008B70011A137 /* AlfredTests.m in Sources */,
+				EB33A1D217B12FE900D788CE /* ALFProjectDataTests.m in Sources */,
+				EB33A1D817B1386A00D788CE /* ALFAbstractDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
