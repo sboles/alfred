@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ALFLightView.h"
+#import "ALFApplicationContext.h"
 
 @interface ALFLightController : NSObject {
     @private
     NSManagedObject *_light;
+    ALFLightView *_lightView;
 }
 
-- (id) initWith:(NSManagedObject*)light;
+- (id) initWith:(NSManagedObject*)light withView:(ALFLightView*)view;
 - (void) checkLightStatus;
 
 @end

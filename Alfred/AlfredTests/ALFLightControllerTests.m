@@ -13,7 +13,8 @@
 - (ALFLightController*)makeController {
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
-    controller = [[ALFLightController alloc] initWith: light];
+    ALFLightView * view = [ALFApplicationContext makeLightView];
+    controller = [[ALFLightController alloc] initWith: light withView: view];
     return controller;
 }
 
@@ -23,8 +24,13 @@
 }
 
 - (void) testCheckLightStatus {
-    ALFLightController *controller = [self makeController];
-   [controller checkLightStatus];
+    ALFLightController *controller;
+    NSManagedObject *light = [self makeLight];
+    ALFLightView * view = [ALFApplicationContext makeLightView];
+    [view setStatus:NO];
+    controller = [[ALFLightController alloc] initWith: light withView: view];
+    [controller checkLightStatus];
+    STAssertEquals(view.status, YES, @"status should have been updated");
 }
 
 @end

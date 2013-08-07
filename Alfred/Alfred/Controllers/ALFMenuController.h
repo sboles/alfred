@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ALFLightView.h"
+#import "ALFLightController.h"
 
 @interface ALFMenuController : NSObject{
 @private

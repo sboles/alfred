@@ -21,19 +21,13 @@
         // Install status items into the menu bar
         NSArray * lights = [self allLights];
         for (NSManagedObject * light in lights) {
-            [self initControllerWithLight:light];
+            //create lightcontrollers
+            ALFLightView * view = [ALFApplicationContext makeLightView];
+            ALFLightController *lightController = [[ALFLightController alloc] initWith:light withView:view];
+            [lightControllers addObject: lightController];
         }
     }
     return self;
-}
-
-// This goes away once we have a real light controller
-- (void) initControllerWithLight:(NSManagedObject*) light {
-    CGFloat length = [[NSStatusBar systemStatusBar] thickness];
-    NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength: length];
-    ALFLightView *lightView = [[ALFLightView alloc] initWithStatusItem:statusItem overallStatus:NO];
-    [lightControllers addObject: lightView];
-    [lightView setStatus:YES];
 }
 
 // This gets refactored into a service

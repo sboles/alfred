@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC38583717B2E1A800B18BFD /* ALFApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = BC38583617B2E1A800B18BFD /* ALFApplicationContext.m */; };
 		BC78ABC617B2A4D10060BC88 /* ALFLightController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78ABC517B2A4D10060BC88 /* ALFLightController.m */; };
 		BC78ABC917B2A5080060BC88 /* ALFLightControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78ABC817B2A5080060BC88 /* ALFLightControllerTests.m */; };
 		BCD3DD5517B2831700B6F55B /* ALFLightServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD3DD5417B2831700B6F55B /* ALFLightServiceTests.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC38583517B2E1A800B18BFD /* ALFApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFApplicationContext.h; sourceTree = "<group>"; };
+		BC38583617B2E1A800B18BFD /* ALFApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFApplicationContext.m; sourceTree = "<group>"; };
 		BC78ABC417B2A4D10060BC88 /* ALFLightController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFLightController.h; sourceTree = "<group>"; };
 		BC78ABC517B2A4D10060BC88 /* ALFLightController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFLightController.m; sourceTree = "<group>"; };
 		BC78ABC717B2A5080060BC88 /* ALFLightControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFLightControllerTests.h; path = AlfredTests/ALFLightControllerTests.h; sourceTree = SOURCE_ROOT; };
@@ -150,6 +153,8 @@
 				BC78ABC517B2A4D10060BC88 /* ALFLightController.m */,
 				EB05DCB817B17D2600ED8051 /* ALFMenuController.h */,
 				EB05DCB917B17D2600ED8051 /* ALFMenuController.m */,
+				BC38583517B2E1A800B18BFD /* ALFApplicationContext.h */,
+				BC38583617B2E1A800B18BFD /* ALFApplicationContext.m */,
 			);
 			path = Alfred;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				EB05DCB717B1784C00ED8051 /* ALFLightView.m in Sources */,
 				EB05DCBA17B17D2600ED8051 /* ALFMenuController.m in Sources */,
 				BC78ABC617B2A4D10060BC88 /* ALFLightController.m in Sources */,
+				BC38583717B2E1A800B18BFD /* ALFApplicationContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
