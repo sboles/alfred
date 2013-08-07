@@ -7,7 +7,7 @@
 
 #import "ALFProjectDataTests.h"
 
-@implementation ALFProjectTests
+@implementation ALFDataTests
 
 - (void)testSaveEntities
 {

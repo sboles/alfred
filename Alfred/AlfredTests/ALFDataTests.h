@@ -7,5 +7,5 @@
 
 #import "ALFAbstractDataTests.h"
 
-@interface ALFProjectTests : ALFAbstractDataTests
+@interface ALFDataTests : ALFAbstractDataTests
 @end
