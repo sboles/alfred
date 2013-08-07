@@ -1,0 +1,20 @@
+//
+//  ALFController.h
+//  Alfred
+//
+//  Created by Pairing on 8/6/13.
+//  Copyright (c) 2013 Rally Software. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface ALFLightController : NSObject {
+    @private
+    NSManagedObject *_light;
+}
+@property BOOL isGreen;
+
+- (id) initWith:(NSManagedObject*)light;
+- (void) checkLightStatus;
+
+@end
