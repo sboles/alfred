@@ -10,8 +10,6 @@
 
 @implementation ALFLightController
 
-@synthesize isGreen;
-
 - (id) initWith:(NSManagedObject *)light {
     self = [super init];
     if(self != nil) {
@@ -28,7 +26,7 @@
 
 -(void) updateStatusTo:(BOOL)status
 {
-    self.isGreen = status;
+    [_light setValue:[NSNumber numberWithBool:status] forKey:@"overallStatus"];
 }
 
 @end

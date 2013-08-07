@@ -12,7 +12,6 @@
     @private
     NSManagedObject *_light;
 }
-@property BOOL isGreen;
 
 - (id) initWith:(NSManagedObject*)light;
 - (void) checkLightStatus;

@@ -5,7 +5,7 @@
 //  Copyright (c) 2013 Mobian Solutions. All rights reserved.
 //
 
-#import "ALFProjectDataTests.h"
+#import "ALFDataTests.h"
 
 @implementation ALFDataTests
 
@@ -45,6 +45,11 @@
     NSArray *projects = [[lights objectAtIndex:0] valueForKey:@"projects"];
     STAssertEquals([projects count], expectedLength, @"should have one project");
     STAssertEquals([[projects objectAtIndex:0] valueForKey:@"url"], [project valueForKey:@"url"], @"project uri's should be equal");
+}
+
+- (void) testLightHasOverallStatus {
+    NSManagedObject* light = [self makeLight];
+    STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], YES, @"light should be green(YES)");
 }
 
 @end
