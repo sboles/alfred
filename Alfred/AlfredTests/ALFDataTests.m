@@ -52,4 +52,9 @@
     STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], YES, @"light should be green(YES)");
 }
 
+- (void) testProjectHasStatus {
+    NSManagedObject* project = [self makeProject];
+    STAssertEqualObjects([project valueForKey:@"status"], @"SUCCESS", @"project default status should be SUCCESS");
+}
+
 @end
