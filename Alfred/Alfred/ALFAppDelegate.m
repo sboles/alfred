@@ -19,7 +19,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
     ALFLightService* lightService = [[ALFLightService alloc] initWithManagedObjectContext:[self managedObjectContext]];
+    [lightService initializeLights];
     _menuController = [[ALFMenuController alloc] initWithManagedObjectContext: [self managedObjectContext] withLightService:lightService];
 }
 

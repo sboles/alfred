@@ -30,7 +30,8 @@
 
 - (void)testReinitializeLights {
     ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext: self.moc];
-    NSArray *lights = [service initializeLights];
+    [service initializeLights];
+    NSArray *lights = [service allLights];
     const NSUInteger expectedLength = 2;
     STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
     STAssertEqualObjects([[self getLightWithName: @"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
@@ -38,7 +39,8 @@
     STAssertTrue([[[self getLightWithName: @"alm" fromAllLights:lights]  valueForKey:@"projects"] count] == 7, @"alm light project count should be %d", 7);
     STAssertTrue([[[self getLightWithName: @"appsdk" fromAllLights:lights] valueForKey:@"projects"] count] == 1, @"appsdk light project count should be %d", 1);
     
-    lights = [service initializeLights];
+    [service initializeLights];
+    lights = [service allLights];
     STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
     STAssertEqualObjects([[self getLightWithName: @"alm" fromAllLights:lights]  valueForKey:@"name"], @"alm", @"light name should be alm");
     STAssertEqualObjects([[self getLightWithName: @"appsdk" fromAllLights:lights] valueForKey:@"name"], @"appsdk", @"light name should be appsdk");

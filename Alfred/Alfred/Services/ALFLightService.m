@@ -33,7 +33,7 @@
     return lights;
 }
 
-- (NSArray *)initializeLights {
+- (void)initializeLights {
     NSArray *lights = [self allLights];
     if([lights count] == 0) {
         NSMutableArray *newLights = [NSMutableArray array];
@@ -50,7 +50,6 @@
         [newLights addObject:almLight];
         [newLights addObject:appsdkLight];
     }
-    return [self allLights];
 }
 
 - (NSManagedObject*)updateOverallStatusForLight:(NSManagedObject *)light {
