@@ -59,16 +59,20 @@
     // setup
     NSManagedObject* project = [self makeProject];
     NSManagedObject* light = [project valueForKey:@"light"];
-    NSError *error;
-    if (![self.moc save:&error]) {
-        STFail(@"could not save: %@", [error localizedDescription]);
-    }
     [project setValue:@"FAILED" forKey:@"status"];
     
     // test
     ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext: self.moc];
     [service updateOverallStatusForLight: light];
     STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], NO, @"status should be YES");
+}
+
+- (void) testUpdateStatusForProject {
+    // setup
+    NSManagedObject* project = [self makeProject];
+    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext: self.moc];
+    [service updateStatusForProject: project];
+    STAssertEqualObjects([project valueForKey:@"status"], @"SUCCESS", @"status should be SUCCESS");
 }
 
 @end

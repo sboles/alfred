@@ -17,5 +17,6 @@
 - (NSArray *)allLights;
 - (NSArray *)initializeLights;
 - (NSManagedObject*)updateOverallStatusForLight:(NSManagedObject*)light;
+- (NSManagedObject*)updateStatusForProject:(NSManagedObject*) project;
 
 @end

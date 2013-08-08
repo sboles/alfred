@@ -56,7 +56,7 @@
 - (NSManagedObject*)updateOverallStatusForLight:(NSManagedObject *)light {
     NSArray *projects = [light valueForKey:@"projects"];
     for (NSManagedObject *project in projects) {
-        // [self updateStatusForProject: project]
+        [self updateStatusForProject: project];
     }
     BOOL result = [[light valueForKey:@"overallStatus"] boolValue];
     for (NSManagedObject *project in projects) {
@@ -66,6 +66,10 @@
     }
     [light setValue:[NSNumber numberWithBool:result] forKey:@"overallStatus"];
     return light;
+}
+
+- (NSManagedObject*)updateStatusForProject:(NSManagedObject *)project {
+    return project;
 }
 
 - (NSManagedObject*) makeLightWithName:(NSString*)name {
