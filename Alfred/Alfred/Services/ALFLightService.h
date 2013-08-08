@@ -16,5 +16,6 @@
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)moc;
 - (NSArray *)allLights;
 - (NSArray *)initializeLights;
+- (NSManagedObject*)updateOverallStatusForLight:(NSManagedObject*)light;
 
 @end

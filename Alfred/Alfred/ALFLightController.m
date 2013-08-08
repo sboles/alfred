@@ -10,21 +10,19 @@
 
 @implementation ALFLightController
 
-- (id) initWith:(NSManagedObject *)light withView:(ALFLightView*)view {
+- (id) initWith:(NSManagedObject *)light withView:(ALFLightView*)view withService:(ALFLightService*)service {
     self = [super init];
     if(self != nil) {
         _light = light;
         _lightView = view;
+        _lightService = service;
     }
     return self;
 }
 
 - (void) checkLightStatus {
-    // call service to check light status
-    BOOL status = YES; //dummied from service
-
-    [_light setValue:[NSNumber numberWithBool:status] forKey:@"overallStatus"];
-    _lightView.status = status;
+    [_lightService updateOverallStatusForLight: _light];
+    _lightView.status = [[_light valueForKey:@"overallStatus"] boolValue];
 }
 
 @end
