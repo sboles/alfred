@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ALFLight" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="overallStatus" transient="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <relationship name="projects" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ALFProject" inverseName="light" inverseEntity="ALFProject" syncable="YES"/>
     </entity>
     <entity name="ALFProject" syncable="YES">
+        <attribute name="status" transient="YES" attributeType="String" defaultValueString="SUCCESS" syncable="YES"/>
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="light" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ALFLight" inverseName="projects" inverseEntity="ALFLight" syncable="YES"/>
     </entity>
     <elements>
         <element name="ALFLight" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="ALFProject" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="ALFProject" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>
