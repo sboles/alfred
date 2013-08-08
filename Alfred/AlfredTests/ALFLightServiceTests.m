@@ -28,4 +28,31 @@
     STAssertEquals([[lights objectAtIndex:0] valueForKey:@"name"], [light valueForKey:@"name"], @"light name should be equal");
 }
 
+- (void)testReinitializeLights {
+    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext: self.moc];
+    NSArray *lights = [service initializeLights];
+    const NSUInteger expectedLength = 2;
+    STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
+    STAssertEqualObjects([[self getLightWithName: @"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
+    STAssertEqualObjects([[self getLightWithName: @"appsdk" fromAllLights:lights]  valueForKey:@"name"], @"appsdk", @"light name should be appsdk");
+    STAssertTrue([[[self getLightWithName: @"alm" fromAllLights:lights]  valueForKey:@"projects"] count] == 7, @"alm light project count should be %d", 7);
+    STAssertTrue([[[self getLightWithName: @"appsdk" fromAllLights:lights] valueForKey:@"projects"] count] == 1, @"appsdk light project count should be %d", 1);
+    
+    lights = [service initializeLights];
+    STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
+    STAssertEqualObjects([[self getLightWithName: @"alm" fromAllLights:lights]  valueForKey:@"name"], @"alm", @"light name should be alm");
+    STAssertEqualObjects([[self getLightWithName: @"appsdk" fromAllLights:lights] valueForKey:@"name"], @"appsdk", @"light name should be appsdk");
+    STAssertTrue([[[self getLightWithName: @"alm" fromAllLights:lights]  valueForKey:@"projects"] count] == 7, @"alm light project count should be %d", 7);
+    STAssertTrue([[[self getLightWithName: @"appsdk" fromAllLights:lights] valueForKey:@"projects"] count] == 1, @"appsdk light project count should be %d", 1);
+}
+
+- (NSManagedObject*) getLightWithName:(NSString*)name fromAllLights:(NSArray*)allLights {
+    for (NSManagedObject *o in allLights) {
+        if([[o valueForKey:@"name"] isEqualTo:name]){
+            return o;
+        }
+    }
+    return nil;
+}
+
 @end
