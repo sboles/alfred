@@ -53,6 +53,21 @@
     return [self allLights];
 }
 
+- (NSManagedObject*)updateOverallStatusForLight:(NSManagedObject *)light {
+    NSArray *projects = [light valueForKey:@"projects"];
+    for (NSManagedObject *project in projects) {
+        // [self updateStatusForProject: project]
+    }
+    BOOL result = [[light valueForKey:@"overallStatus"] boolValue];
+    for (NSManagedObject *project in projects) {
+        if([[project valueForKey:@"status"] isNotEqualTo: @"SUCCESS"]) {
+            result = NO;
+        }
+    }
+    [light setValue:[NSNumber numberWithBool:result] forKey:@"overallStatus"];
+    return light;
+}
+
 - (NSManagedObject*) makeLightWithName:(NSString*)name {
     NSManagedObject *light = [NSEntityDescription
                               insertNewObjectForEntityForName:@"ALFLight"
@@ -69,6 +84,5 @@
     [project setValue:light forKey:@"light"];
     return project;
 }
-
 
 @end

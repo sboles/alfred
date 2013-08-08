@@ -14,7 +14,8 @@
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
     ALFLightView * view = [ALFApplicationContext makeLightView];
-    controller = [[ALFLightController alloc] initWith: light withView: view];
+    ALFLightService * lightService = [[ALFLightService alloc] init];
+    controller = [[ALFLightController alloc] initWith: light withView: view withService:lightService];
     return controller;
 }
 
@@ -28,7 +29,8 @@
     NSManagedObject *light = [self makeLight];
     ALFLightView * view = [ALFApplicationContext makeLightView];
     [view setStatus:NO];
-    controller = [[ALFLightController alloc] initWith: light withView: view];
+    ALFLightService * lightService = [[ALFLightService alloc] init];
+    controller = [[ALFLightController alloc] initWith: light withView: view withService:lightService];
     [controller checkLightStatus];
     STAssertEquals(view.status, YES, @"status should have been updated");
 }
