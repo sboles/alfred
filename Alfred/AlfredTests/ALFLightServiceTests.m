@@ -131,11 +131,7 @@
 + (NSString *) greenMockData {
     return @""
     "{"
-    "  \"lastBuild\": {"
-    "    \"number\": 813,"
-    "    \"url\": \"http://alm-build:8080/hudson/job/master-alm-continuous/813/\""
-    "  },"
-    "  \"lastSuccessfulBuild\": {"
+    "  \"lastCompletedBuild\": {"
     "    \"number\": 813,"
     "    \"url\": \"http://alm-build:8080/hudson/job/master-alm-continuous/813/\""
     "  }"
@@ -145,13 +141,9 @@
 + (NSString *) redMockData {
     return @""
     "{"
-    "  \"lastBuild\": {"
+    "  \"lastCompletedBuild\": {"
     "    \"number\": 808,"
     "    \"url\": \"http://alm-build:8080/hudson/job/master-alm-continuous/808/\""
-    "  },"
-    "  \"lastSuccessfulBuild\": {"
-    "    \"number\": 813,"
-    "    \"url\": \"http://alm-build:8080/hudson/job/master-alm-continuous/813/\""
     "  }"
     "}";
 }

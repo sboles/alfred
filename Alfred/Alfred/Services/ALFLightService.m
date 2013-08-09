@@ -71,7 +71,7 @@
     NSString *urlString = [NSString stringWithFormat: @"%@api/json", [project valueForKey:@"url"]];
     NSArray *jsonArrayForProject = [self jsonArrayWithData: [[self getProjectDataWith:urlString] dataUsingEncoding:NSUTF8StringEncoding]];
     if (jsonArrayForProject) {
-        NSString *lastBuildUrlString = [NSString stringWithFormat: @"%@api/json", [jsonArrayForProject valueForKeyPath:@"lastBuild.url"]];
+        NSString *lastBuildUrlString = [NSString stringWithFormat: @"%@api/json", [jsonArrayForProject valueForKeyPath:@"lastCompletedBuild.url"]];
         NSArray *jsonArrayForBuild = [self jsonArrayWithData: [[self getBuildDataWith:lastBuildUrlString] dataUsingEncoding:NSUTF8StringEncoding]];
         if(jsonArrayForBuild) {
             NSString *status = [jsonArrayForBuild valueForKeyPath:@"result"];
