@@ -16,9 +16,11 @@
     NSManagedObject *_light;
     ALFLightView *_lightView;
     ALFLightService *_lightService;
+    NSTimer *_timer;
 }
 
 - (id) initWith:(NSManagedObject*)light withView:(ALFLightView*)view withService:(ALFLightService*)service;
 - (void) checkLightStatus;
+- (void) setUpdateInterval: (NSTimeInterval) seconds;
 
 @end

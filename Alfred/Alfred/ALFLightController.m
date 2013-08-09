@@ -25,4 +25,9 @@
     _lightView.status = [[_light valueForKey:@"overallStatus"] boolValue];
 }
 
+- (void) setUpdateInterval:(NSTimeInterval)seconds {
+    [_timer invalidate];
+    _timer = [NSTimer scheduledTimerWithTimeInterval: seconds target: self selector: @selector(checkLightStatus) userInfo: nil repeats: YES];
+}
+
 @end

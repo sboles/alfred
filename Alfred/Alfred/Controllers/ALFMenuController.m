@@ -23,6 +23,7 @@
             //create lightcontrollers
             ALFLightView * view = [ALFApplicationContext makeLightView];
             ALFLightController *lightController = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
+            [lightController setUpdateInterval:30];
             [lightControllers addObject: lightController];
         }
     }
