@@ -41,15 +41,11 @@
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/master-alm-continuous/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/backward-compatibility-of-migrations/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-guitest/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-java/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-chrome/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-firefox/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-loadtest-deploy/"];
-//        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-flaky-finder-continuous/"];
-        NSManagedObject *appsdkLight = [self makeLightWithName:@"appsdk"];
-        [self makeProjectFor:appsdkLight withURL:@"http://alm-build:8080/hudson/view/App%20SDK/job/master-appsdk-continuous-js/"];
+        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-java/"];
+        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-flaky-finder-continuous/"];
         [newLights addObject:almLight];
-        [newLights addObject:appsdkLight];
     }
 }
 
@@ -77,7 +73,13 @@
         if(jsonArrayForBuild) {
             NSString *status = [jsonArrayForBuild valueForKeyPath:@"result"];
             [project setValue:status forKey:@"status"];
+        } else {
+            NSLog(@"Could not retrieve data for build %@", lastBuildUrlString);
+            [project setValue:@"UNKNOWN" forKey:@"status"];
         }
+    } else {
+        NSLog(@"Could not retrieve data for project %@", project);
+        [project setValue:@"UNKNOWN" forKey:@"status"];
     }
     return project;
 }
@@ -109,6 +111,9 @@
 }
 
 - (NSArray *)jsonArrayWithData:(NSData *)data {
+    if (data == nil) {
+        return nil;
+    }
     NSError *e = nil;
     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
     if (!jsonArray) {

@@ -21,6 +21,7 @@
 }
 
 - (void) checkLightStatus {
+    NSLog(@"checking light status...");
     [_lightService updateOverallStatusForLight: _light];
     _lightView.status = [[_light valueForKey:@"overallStatus"] boolValue];
 }
