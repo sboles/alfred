@@ -9,7 +9,9 @@
 #import "ALFAppDelegate.h"
 #import "ALFMenuController.h"
 
-@implementation ALFAppDelegate
+@implementation ALFAppDelegate {
+    NSTimer* timer;
+}
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -23,6 +25,14 @@
     ALFLightService* lightService = [[ALFLightService alloc] initWithManagedObjectContext:[self managedObjectContext]];
     [lightService initializeLights];
     _menuController = [[ALFMenuController alloc] initWithManagedObjectContext: [self managedObjectContext] withLightService:lightService];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval: 30 target: self selector: @selector(checkLights) userInfo: nil repeats: YES];
+}
+
+- (void)checkLights
+{
+    NSMutableArray* lights = [_menuController getLightControllers];
+    [lights makeObjectsPerformSelector:@selector(checkLightStatus)];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.rally.Alfred" in the user's Application Support directory.
