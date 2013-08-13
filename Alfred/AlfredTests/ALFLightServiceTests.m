@@ -48,13 +48,13 @@
     const NSUInteger expectedLength = 1;
     STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
     STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
-    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 7, @"alm light project count should be %d", 7);
+    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
 
     [service initializeLights];
     lights = [service allLights];
     STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
     STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
-    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 7, @"alm light project count should be %d", 7);
+    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
 }
 
 - (NSManagedObject *)getLightWithName:(NSString *)name fromAllLights:(NSArray *)allLights {

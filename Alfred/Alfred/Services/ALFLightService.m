@@ -44,6 +44,7 @@
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-firefox/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-java/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-flaky-finder-continuous/"];
+        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-appsdk-continuous-js/"];
         [newLights addObject:almLight];
     }
 }
