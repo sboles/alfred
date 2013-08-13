@@ -12,8 +12,7 @@
 @interface ALFMenuController : NSObject{
 @private
     NSMutableArray *lightControllers;
-    NSManagedObjectContext * _moc;
 }
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)moc withLightService:(ALFLightService*)lightService;
+- (id)initWithLightService:(ALFLightService *)lightService;
 
 @end

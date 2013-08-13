@@ -10,11 +10,10 @@
 
 @implementation ALFMenuController
 
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)moc withLightService:(ALFLightService *)lightService {
+- (id) initWithLightService:(ALFLightService *)lightService {
     self = [super init];
     if (self != nil)
     {
-        _moc = moc;
         lightControllers = [NSMutableArray array];
         
         // Install status items into the menu bar

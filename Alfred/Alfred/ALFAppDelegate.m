@@ -22,7 +22,7 @@
     
     ALFLightService* lightService = [[ALFLightService alloc] initWithManagedObjectContext:[self managedObjectContext]];
     [lightService initializeLights];
-    _menuController = [[ALFMenuController alloc] initWithManagedObjectContext: [self managedObjectContext] withLightService:lightService];
+    _menuController = [[ALFMenuController alloc] initWithLightService:lightService];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.rally.Alfred" in the user's Application Support directory.
