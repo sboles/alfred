@@ -18,10 +18,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-
-    ALFLightService *lightService = [[ALFLightService alloc] initWithManagedObjectContext:[self managedObjectContext]];
-    [lightService initializeLights];
-    _menuController = [[ALFMenuController alloc] initWithLightService:lightService];
+    [self.menuController initializeLights];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.rally.Alfred" in the user's Application Support directory.

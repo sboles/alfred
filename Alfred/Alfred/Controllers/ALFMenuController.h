@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ALFLightController.h"
 
-@interface ALFMenuController : NSObject {
-@private
-    NSMutableArray *lightControllers;
-}
-- (id)initWithLightService:(ALFLightService *)lightService;
+@interface ALFMenuController : NSArrayController
+
+@property (weak) IBOutlet ALFLightService *lightService;
+
+- (void)initializeLights;
+- (NSArray *)allLights;
 
 @end
