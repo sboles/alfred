@@ -29,6 +29,7 @@
 - (void)setUpdateInterval:(NSTimeInterval)seconds {
     [_timer invalidate];
     _timer = [NSTimer scheduledTimerWithTimeInterval:seconds target:self selector:@selector(checkLightStatus) userInfo:nil repeats:YES];
+    [_timer fire];
 }
 
 @end
