@@ -15,5 +15,6 @@
     NSManagedObjectContext * _moc;
 }
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)moc withLightService:(ALFLightService*)lightService;
+- (NSMutableArray*)getLightControllers;
 
 @end

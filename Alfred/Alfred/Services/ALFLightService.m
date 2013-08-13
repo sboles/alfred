@@ -45,7 +45,12 @@
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-firefox/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-java/"];
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-flaky-finder-continuous/"];
+        NSManagedObject *appSdkLight = [self makeLightWithName:@"appsdk"];
+        [self makeProjectFor:appSdkLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/master-loadtest-deploy/"];
+
+        
         [newLights addObject:almLight];
+        [newLights addObject:appSdkLight];
     }
 }
 
