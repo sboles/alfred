@@ -140,19 +140,14 @@
 		EB7A7DA617B008B70011A137 /* Alfred */ = {
 			isa = PBXGroup;
 			children = (
+				EBF560AF17BA77FB009C5380 /* Controllers */,
+				EBF560B017BA7806009C5380 /* Views */,
+				EBF560AE17BA77EA009C5380 /* Services */,
+				EB7A7DA717B008B70011A137 /* Supporting Files */,
 				EB7A7DB217B008B70011A137 /* ALFAppDelegate.h */,
 				EB7A7DB317B008B70011A137 /* ALFAppDelegate.m */,
 				EB7A7DB517B008B70011A137 /* MainMenu.xib */,
 				EB7A7DB817B008B70011A137 /* Alfred.xcdatamodeld */,
-				EB7A7DA717B008B70011A137 /* Supporting Files */,
-				BCD3DD5617B2847300B6F55B /* ALFLightService.h */,
-				BCD3DD5717B2847300B6F55B /* ALFLightService.m */,
-				EB05DCB517B1784C00ED8051 /* ALFLightView.h */,
-				EB05DCB617B1784C00ED8051 /* ALFLightView.m */,
-				BC78ABC417B2A4D10060BC88 /* ALFLightController.h */,
-				BC78ABC517B2A4D10060BC88 /* ALFLightController.m */,
-				EB05DCB817B17D2600ED8051 /* ALFMenuController.h */,
-				EB05DCB917B17D2600ED8051 /* ALFMenuController.m */,
 				BC38583517B2E1A800B18BFD /* ALFApplicationContext.h */,
 				BC38583617B2E1A800B18BFD /* ALFApplicationContext.m */,
 			);
@@ -194,6 +189,35 @@
 				EB7A7DC917B008B70011A137 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBF560AE17BA77EA009C5380 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BCD3DD5617B2847300B6F55B /* ALFLightService.h */,
+				BCD3DD5717B2847300B6F55B /* ALFLightService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		EBF560AF17BA77FB009C5380 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC78ABC417B2A4D10060BC88 /* ALFLightController.h */,
+				BC78ABC517B2A4D10060BC88 /* ALFLightController.m */,
+				EB05DCB817B17D2600ED8051 /* ALFMenuController.h */,
+				EB05DCB917B17D2600ED8051 /* ALFMenuController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EBF560B017BA7806009C5380 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB05DCB517B1784C00ED8051 /* ALFLightView.h */,
+				EB05DCB617B1784C00ED8051 /* ALFLightView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
