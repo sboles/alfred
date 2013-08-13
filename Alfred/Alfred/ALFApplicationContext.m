@@ -10,9 +10,9 @@
 
 @implementation ALFApplicationContext
 
-+(ALFLightView*) makeLightView {
++ (ALFLightView *)makeLightView {
     CGFloat length = [[NSStatusBar systemStatusBar] thickness];
-    NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength: length];
+    NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:length];
     ALFLightView *lightView = [[ALFLightView alloc] initWithStatusItem:statusItem overallStatus:YES];
     [lightView setStatus:YES];
     return lightView;

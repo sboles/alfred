@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ALFLightController.h"
 
-@interface ALFMenuController : NSObject{
+@interface ALFMenuController : NSObject {
 @private
     NSMutableArray *lightControllers;
 }

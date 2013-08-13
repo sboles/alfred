@@ -9,12 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ALFLightView : NSView {
-    @private
+@private
     NSStatusItem *_statusItem;
     BOOL _status;
 }
 
-- (id)initWithStatusItem:(NSStatusItem *)statusItem overallStatus:(BOOL) status;
-@property (nonatomic) BOOL status;
+- (id)initWithStatusItem:(NSStatusItem *)statusItem overallStatus:(BOOL)status;
+
+@property(nonatomic) BOOL status;
 
 @end

@@ -10,9 +10,9 @@
 
 @implementation ALFLightController
 
-- (id) initWith:(NSManagedObject *)light withView:(ALFLightView*)view withService:(ALFLightService*)service {
+- (id)initWith:(NSManagedObject *)light withView:(ALFLightView *)view withService:(ALFLightService *)service {
     self = [super init];
-    if(self != nil) {
+    if (self != nil) {
         _light = light;
         _lightView = view;
         _lightService = service;
@@ -20,15 +20,15 @@
     return self;
 }
 
-- (void) checkLightStatus {
+- (void)checkLightStatus {
     NSLog(@"checking light status...");
-    [_lightService updateOverallStatusForLight: _light];
+    [_lightService updateOverallStatusForLight:_light];
     _lightView.status = [[_light valueForKey:@"overallStatus"] boolValue];
 }
 
-- (void) setUpdateInterval:(NSTimeInterval)seconds {
+- (void)setUpdateInterval:(NSTimeInterval)seconds {
     [_timer invalidate];
-    _timer = [NSTimer scheduledTimerWithTimeInterval: seconds target: self selector: @selector(checkLightStatus) userInfo: nil repeats: YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:seconds target:self selector:@selector(checkLightStatus) userInfo:nil repeats:YES];
 }
 
 @end

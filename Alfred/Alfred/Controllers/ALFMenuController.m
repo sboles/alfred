@@ -10,20 +10,19 @@
 
 @implementation ALFMenuController
 
-- (id) initWithLightService:(ALFLightService *)lightService {
+- (id)initWithLightService:(ALFLightService *)lightService {
     self = [super init];
-    if (self != nil)
-    {
+    if (self != nil) {
         lightControllers = [NSMutableArray array];
-        
+
         // Install status items into the menu bar
-        NSArray * lights = [lightService allLights];
-        for (NSManagedObject * light in lights) {
+        NSArray *lights = [lightService allLights];
+        for (NSManagedObject *light in lights) {
             //create lightcontrollers
-            ALFLightView * view = [ALFApplicationContext makeLightView];
+            ALFLightView *view = [ALFApplicationContext makeLightView];
             ALFLightController *lightController = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
             [lightController setUpdateInterval:30];
-            [lightControllers addObject: lightController];
+            [lightControllers addObject:lightController];
         }
     }
     return self;

@@ -11,6 +11,6 @@
 
 @interface ALFApplicationContext : NSObject
 
-+(ALFLightView*) makeLightView;
++ (ALFLightView *)makeLightView;
 
 @end

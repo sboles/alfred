@@ -10,27 +10,27 @@
 
 @implementation ALFLightControllerTests
 
-- (ALFLightController*)makeController {
+- (ALFLightController *)makeController {
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
-    ALFLightView * view = [ALFApplicationContext makeLightView];
-    ALFLightService * lightService = [[ALFLightService alloc] init];
-    controller = [[ALFLightController alloc] initWith: light withView: view withService:lightService];
+    ALFLightView *view = [ALFApplicationContext makeLightView];
+    ALFLightService *lightService = [[ALFLightService alloc] init];
+    controller = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
     return controller;
 }
 
-- (void) testInitWithLight {
+- (void)testInitWithLight {
     ALFLightController *controller = [self makeController];
     STAssertNotNil(controller, @"controller is not nil");
 }
 
-- (void) testCheckLightStatus {
+- (void)testCheckLightStatus {
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
-    ALFLightView * view = [ALFApplicationContext makeLightView];
+    ALFLightView *view = [ALFApplicationContext makeLightView];
     [view setStatus:NO];
-    ALFLightService * lightService = [[ALFLightService alloc] init];
-    controller = [[ALFLightController alloc] initWith: light withView: view withService:lightService];
+    ALFLightService *lightService = [[ALFLightService alloc] init];
+    controller = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
     [controller checkLightStatus];
     STAssertEquals(view.status, YES, @"status should have been updated");
 }

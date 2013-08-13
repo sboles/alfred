@@ -10,6 +10,6 @@
 #import "ALFAbstractDataTests.h"
 #import "ALFLightService.h"
 
-@interface ALFLightServiceTests : ALFAbstractDataTests 
+@interface ALFLightServiceTests : ALFAbstractDataTests
 
 @end

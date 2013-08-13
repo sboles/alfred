@@ -11,7 +11,9 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @interface ALFAbstractDataTests : SenTestCase
-@property (nonatomic,retain) NSManagedObjectContext *moc;
-- (NSManagedObject *) makeLight;
-- (NSManagedObject *) makeProject;
+@property(nonatomic, retain) NSManagedObjectContext *moc;
+
+- (NSManagedObject *)makeLight;
+
+- (NSManagedObject *)makeProject;
 @end

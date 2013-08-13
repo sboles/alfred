@@ -12,15 +12,17 @@
 #import "ALFLightService.h"
 
 @interface ALFLightController : NSObject {
-    @private
+@private
     NSManagedObject *_light;
     ALFLightView *_lightView;
     ALFLightService *_lightService;
     NSTimer *_timer;
 }
 
-- (id) initWith:(NSManagedObject*)light withView:(ALFLightView*)view withService:(ALFLightService*)service;
-- (void) checkLightStatus;
-- (void) setUpdateInterval: (NSTimeInterval) seconds;
+- (id)initWith:(NSManagedObject *)light withView:(ALFLightView *)view withService:(ALFLightService *)service;
+
+- (void)checkLightStatus;
+
+- (void)setUpdateInterval:(NSTimeInterval)seconds;
 
 @end
