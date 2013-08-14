@@ -14,11 +14,9 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize menuController = _menuController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    [self.menuController initializeLights];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.rally.Alfred" in the user's Application Support directory.

@@ -10,6 +10,11 @@
 
 @implementation ALFMenuController
 
+- (void) prepareContent {
+    [super prepareContent];
+    [self makeLightControllers];
+}
+
 - (void) makeLightControllers {
     // Install status items into the menu bar
     NSArray *lights = [self allLights];
@@ -37,7 +42,6 @@
         [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-appsdk-continuous-js/"];
         [newLights addObject:almLight];
     }
-    [self makeLightControllers];
 }
 
 - (NSArray *)allLights {
