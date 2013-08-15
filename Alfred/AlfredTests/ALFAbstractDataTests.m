@@ -25,22 +25,12 @@
     [super tearDown];
 }
 
-- (NSManagedObject *)makeLight {
-    NSManagedObject *light = [NSEntityDescription
-            insertNewObjectForEntityForName:@"ALFLight"
-                     inManagedObjectContext:self.moc];
-    [light setValue:[@"test" stringByAppendingString:[self genRandStringLength:10]] forKey:@"name"];
-    return light;
+- (ALFLight *)makeLight {
+    return [ALFLight lightWithName:[@"test" stringByAppendingString:[self genRandStringLength:10]] usingContext:self.moc];
 }
 
-- (NSManagedObject *)makeProject {
-    NSManagedObject *light = [self makeLight];
-    NSManagedObject *project = [NSEntityDescription
-            insertNewObjectForEntityForName:@"ALFProject"
-                     inManagedObjectContext:self.moc];
-    [project setValue:[@"http://test" stringByAppendingString:[self genRandStringLength:10]] forKey:@"url"];
-    [project setValue:light forKey:@"light"];
-    return project;
+- (ALFProject *)makeProject {
+    return [ALFProject projectWithLight:[self makeLight] withURL:[@"http://test" stringByAppendingString:[self genRandStringLength:10]] usingContext:self.moc];
 }
 
 NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

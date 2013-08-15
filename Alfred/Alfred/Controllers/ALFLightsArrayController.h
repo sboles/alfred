@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ALFMenuController.h"
+#import "ALFLight.h"
 
 @interface ALFLightsArrayController : NSArrayController
 

@@ -27,6 +27,8 @@
 		EB7A7DC217B008B70011A137 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DC117B008B70011A137 /* SenTestingKit.framework */; };
 		EB7A7DC317B008B70011A137 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DA017B008B70011A137 /* Cocoa.framework */; };
 		EB7A7DCB17B008B70011A137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7A7DC917B008B70011A137 /* InfoPlist.strings */; };
+		EBCEF18617BD7A130005B619 /* ALFLight.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCEF18517BD7A130005B619 /* ALFLight.m */; };
+		EBCEF18917BD7A310005B619 /* ALFProject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCEF18817BD7A310005B619 /* ALFProject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,10 @@
 		EB7A7DC117B008B70011A137 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB7A7DC817B008B70011A137 /* AlfredTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlfredTests-Info.plist"; sourceTree = "<group>"; };
 		EB7A7DCA17B008B70011A137 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EBCEF18417BD7A130005B619 /* ALFLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFLight.h; path = Models/ALFLight.h; sourceTree = "<group>"; };
+		EBCEF18517BD7A130005B619 /* ALFLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFLight.m; path = Models/ALFLight.m; sourceTree = "<group>"; };
+		EBCEF18717BD7A310005B619 /* ALFProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFProject.h; path = Models/ALFProject.h; sourceTree = "<group>"; };
+		EBCEF18817BD7A310005B619 /* ALFProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFProject.m; path = Models/ALFProject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 		EB7A7DA617B008B70011A137 /* Alfred */ = {
 			isa = PBXGroup;
 			children = (
+				EBCEF18317BD79F60005B619 /* Models */,
 				EBF560AF17BA77FB009C5380 /* Controllers */,
 				EBF560B017BA7806009C5380 /* Views */,
 				EBF560AE17BA77EA009C5380 /* Services */,
@@ -192,6 +199,17 @@
 				EB7A7DC917B008B70011A137 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBCEF18317BD79F60005B619 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEF18417BD7A130005B619 /* ALFLight.h */,
+				EBCEF18517BD7A130005B619 /* ALFLight.m */,
+				EBCEF18717BD7A310005B619 /* ALFProject.h */,
+				EBCEF18817BD7A310005B619 /* ALFProject.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		EBF560AE17BA77EA009C5380 /* Services */ = {
@@ -342,6 +360,8 @@
 				EB05DCBA17B17D2600ED8051 /* ALFMenuController.m in Sources */,
 				BC78ABC617B2A4D10060BC88 /* ALFLightController.m in Sources */,
 				BC90EB6917BC042100DC3DCA /* ALFLightsArrayController.m in Sources */,
+				EBCEF18617BD7A130005B619 /* ALFLight.m in Sources */,
+				EBCEF18917BD7A310005B619 /* ALFProject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

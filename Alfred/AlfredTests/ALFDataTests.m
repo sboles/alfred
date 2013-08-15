@@ -18,10 +18,26 @@
     }
 }
 
-- (void)testLoadEntities {
+- (void)testAllLights {
     // setup
     NSManagedObject *project = [self makeProject];
     NSManagedObject *light = [project valueForKey:@"light"];
+    NSError *error;
+    if (![self.moc save:&error]) {
+        STFail(@"could not save: %@", [error localizedDescription]);
+    }
+    
+    // test
+    NSArray *lights = [ALFLight allLightsUsingContext:self.moc];
+    const NSUInteger expectedLength = 1;
+    STAssertEquals([lights count], expectedLength, @"should have one light");
+    STAssertEquals([[lights objectAtIndex:0] valueForKey:@"name"], [light valueForKey:@"name"], @"light name should be equal");
+}
+
+- (void)testLoadEntities {
+    // setup
+    ALFProject *project = [self makeProject];
+    ALFLight *light = [project valueForKey:@"light"];
     NSError *error;
     if (![self.moc save:&error]) {
         STFail(@"could not save: %@", [error localizedDescription]);

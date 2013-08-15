@@ -7,17 +7,20 @@
 //
 
 #import "ALFMenuController.h"
+#import "AlFLight.h"
+#import "ALFProject.h"
 
 @implementation ALFMenuController
 
 - (void) prepareContent {
     [super prepareContent];
+    [self initializeLights];
     [self makeLightControllers];
 }
 
 - (void) makeLightControllers {
     // Install status items into the menu bar
-    NSArray *lights = [self allLights];
+    NSArray *lights = [ALFLight allLightsUsingContext:self.managedObjectContext];
     for (NSManagedObject *light in lights) {
         //create lightcontrollers
         ALFLightView *view = [ALFLightView lightView];
@@ -28,51 +31,20 @@
 }
 
 - (void)initializeLights {
-    NSArray *lights = [self allLights];
+    NSArray *lights = [ALFLight allLightsUsingContext:self.managedObjectContext];
     if ([lights count] == 0) {
         NSMutableArray *newLights = [NSMutableArray array];
-        NSManagedObject *almLight = [self makeLightWithName:@"alm"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/master-alm-continuous/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/backward-compatibility-of-migrations/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-guitest/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-chrome/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-firefox/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-java/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-flaky-finder-continuous/"];
-        [self makeProjectFor:almLight withURL:@"http://alm-build:8080/hudson/job/master-appsdk-continuous-js/"];
+        NSManagedObject *almLight = [ALFLight lightWithName:@"alm" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight: almLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/master-alm-continuous/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/view/%20%20master/job/backward-compatibility-of-migrations/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-guitest/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-chrome/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-js-firefox/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/job/master-alm-continuous-java/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/job/master-flaky-finder-continuous/" usingContext:self.managedObjectContext];
+        [ALFProject projectWithLight:almLight withURL:@"http://alm-build:8080/hudson/job/master-appsdk-continuous-js/" usingContext:self.managedObjectContext];
         [newLights addObject:almLight];
     }
-}
-
-- (NSArray *)allLights {
-    NSError *error;
-    NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"ALFLight" inManagedObjectContext:self.managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    NSArray *lights = [self.managedObjectContext executeFetchRequest:request error:&error];
-    if (lights == nil) {
-        NSLog(@"could not fetch: %@", [error localizedDescription]);
-        lights = [NSArray array];
-    }
-    return lights;
-}
-
-- (NSManagedObject *)makeLightWithName:(NSString *)name {
-    NSManagedObject *light = [NSEntityDescription
-                              insertNewObjectForEntityForName:@"ALFLight"
-                              inManagedObjectContext:self.managedObjectContext];
-    [light setValue:name forKey:@"name"];
-    return light;
-}
-
-- (NSManagedObject *)makeProjectFor:(NSManagedObject *)light withURL:(NSString *)url {
-    NSManagedObject *project = [NSEntityDescription
-                                insertNewObjectForEntityForName:@"ALFProject"
-                                inManagedObjectContext:self.managedObjectContext];
-    [project setValue:url forKey:@"url"];
-    [project setValue:light forKey:@"light"];
-    return project;
 }
 
 @end

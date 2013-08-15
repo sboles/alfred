@@ -14,6 +14,5 @@
 @property (weak) IBOutlet ALFLightService *lightService;
 
 - (void)initializeLights;
-- (NSArray *)allLights;
 
 @end

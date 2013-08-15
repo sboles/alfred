@@ -11,7 +11,7 @@
 @implementation ALFLightsArrayController
 
 -(void)prepareContent {
-    NSArray* lights = [self.menuController allLights];
+    NSArray* lights = [ALFLight allLightsUsingContext:self.menuController.managedObjectContext];
     [self addObjects:lights];
     NSArray *objects = [self arrangedObjects];
     NSLog(@"count: %li", (unsigned long)[objects count]);
