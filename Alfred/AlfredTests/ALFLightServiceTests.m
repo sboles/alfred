@@ -24,48 +24,6 @@
     [super tearDown];
 }
 
-- (void)testAllLights {
-    // setup
-    NSManagedObject *project = [self makeProject];
-    NSManagedObject *light = [project valueForKey:@"light"];
-    NSError *error;
-    if (![self.moc save:&error]) {
-        STFail(@"could not save: %@", [error localizedDescription]);
-    }
-
-    // test
-    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext:self.moc];
-    NSArray *lights = [service allLights];
-    const NSUInteger expectedLength = 1;
-    STAssertEquals([lights count], expectedLength, @"should have one light");
-    STAssertEquals([[lights objectAtIndex:0] valueForKey:@"name"], [light valueForKey:@"name"], @"light name should be equal");
-}
-
-- (void)testReinitializeLights {
-    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext:self.moc];
-    [service initializeLights];
-    NSArray *lights = [service allLights];
-    const NSUInteger expectedLength = 1;
-    STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
-    STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
-    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
-
-    [service initializeLights];
-    lights = [service allLights];
-    STAssertEquals([lights count], expectedLength, @"should have two initialized lights");
-    STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
-    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
-}
-
-- (NSManagedObject *)getLightWithName:(NSString *)name fromAllLights:(NSArray *)allLights {
-    for (NSManagedObject *o in allLights) {
-        if ([[o valueForKey:@"name"] isEqualTo:name]) {
-            return o;
-        }
-    }
-    return nil;
-}
-
 - (void)testUpdateOverallStatusForGreenLightToRedLight {
     // setup
     method_exchangeImplementations(class_getInstanceMethod([ALFLightService class], @selector(updateStatusForProject:)), class_getInstanceMethod([self class], @selector(mockUpdateStatusForProject:)));
@@ -75,7 +33,7 @@
     STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], YES, @"status should be YES");
 
     // test
-    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext:self.moc];
+    ALFLightService *service = [[ALFLightService alloc] init];
     [service updateOverallStatusForLight:light];
     STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], NO, @"status should be NO");
 
@@ -93,7 +51,7 @@
     STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], NO, @"status should be NO");
 
     // test
-    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext:self.moc];
+    ALFLightService *service = [[ALFLightService alloc] init];
     [service updateOverallStatusForLight:light];
     STAssertEquals([[light valueForKey:@"overallStatus"] boolValue], YES, @"status should be YES");
 
@@ -104,7 +62,7 @@
 - (void)testUpdateStatusForProject {
     // setup
     NSManagedObject *project = [self makeProject];
-    ALFLightService *service = [[ALFLightService alloc] initWithManagedObjectContext:self.moc];
+    ALFLightService *service = [[ALFLightService alloc] init];
 
     // test
     [service updateStatusForProject:project];

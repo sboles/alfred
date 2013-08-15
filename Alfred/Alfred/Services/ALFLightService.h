@@ -8,16 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ALFLightService : NSObject {
-@private
-    NSManagedObjectContext *_moc;
-}
-
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)moc;
-
-- (NSArray *)allLights;
-
-- (void)initializeLights;
+@interface ALFLightService : NSObject 
 
 - (NSManagedObject *)updateOverallStatusForLight:(NSManagedObject *)light;
 
