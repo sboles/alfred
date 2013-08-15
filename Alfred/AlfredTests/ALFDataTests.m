@@ -71,4 +71,29 @@
     STAssertEqualObjects([project valueForKey:@"status"], @"SUCCESS", @"project default status should be SUCCESS");
 }
 
+- (void)testInitializeLights {
+    [ALFLight initializeLightsUsingContext:self.moc];
+    NSArray *lights = [ALFLight allLightsUsingContext:self.moc];
+    const NSUInteger expectedLength = 1;
+    STAssertEquals([lights count], expectedLength, @"should have one initialized lights");
+    STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
+    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
+    
+    [ALFLight initializeLightsUsingContext:self.moc];
+    lights = [ALFLight allLightsUsingContext:self.moc];
+    STAssertEquals([lights count], expectedLength, @"should have one initialized lights");
+    STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
+    STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
+}
+
+- (NSManagedObject *)getLightWithName:(NSString *)name fromAllLights:(NSArray *)allLights {
+    for (NSManagedObject *o in allLights) {
+        if ([[o valueForKey:@"name"] isEqualTo:name]) {
+            return o;
+        }
+    }
+    return nil;
+}
+
+
 @end
