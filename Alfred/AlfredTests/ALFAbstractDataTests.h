@@ -9,11 +9,15 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "ALFLight.h"
+#import "ALFProject.h"
 
 @interface ALFAbstractDataTests : SenTestCase
+
 @property(nonatomic, retain) NSManagedObjectContext *moc;
 
-- (NSManagedObject *)makeLight;
+- (ALFLight *)makeLight;
 
-- (NSManagedObject *)makeProject;
+- (ALFProject *)makeProject;
+
 @end

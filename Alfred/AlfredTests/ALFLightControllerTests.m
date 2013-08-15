@@ -10,17 +10,12 @@
 
 @implementation ALFLightControllerTests
 
-- (ALFLightController *)makeController {
+- (void)testInitWithLight {
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
     ALFLightView *view = [ALFLightView lightView];
     ALFLightService *lightService = [[ALFLightService alloc] init];
     controller = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
-    return controller;
-}
-
-- (void)testInitWithLight {
-    ALFLightController *controller = [self makeController];
     STAssertNotNil(controller, @"controller is not nil");
 }
 

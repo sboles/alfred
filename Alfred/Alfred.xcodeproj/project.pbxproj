@@ -13,10 +13,8 @@
 		BCD3DD5517B2831700B6F55B /* ALFLightServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD3DD5417B2831700B6F55B /* ALFLightServiceTests.m */; };
 		BCD3DD5817B2847300B6F55B /* ALFLightService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD3DD5717B2847300B6F55B /* ALFLightService.m */; };
 		EB05DCB717B1784C00ED8051 /* ALFLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB05DCB617B1784C00ED8051 /* ALFLightView.m */; };
-		EB05DCBA17B17D2600ED8051 /* ALFMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB05DCB917B17D2600ED8051 /* ALFMenuController.m */; };
 		EB33A1D217B12FE900D788CE /* ALFDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33A1D117B12FE900D788CE /* ALFDataTests.m */; };
 		EB33A1D817B1386A00D788CE /* ALFAbstractDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33A1D717B1386A00D788CE /* ALFAbstractDataTests.m */; };
-		EB77FD1C17BBB2A8001D24BF /* ALFMenuControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77FD1B17BBB2A8001D24BF /* ALFMenuControllerTests.m */; };
 		EB7A7DA117B008B70011A137 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DA017B008B70011A137 /* Cocoa.framework */; };
 		EB7A7DAB17B008B70011A137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7A7DA917B008B70011A137 /* InfoPlist.strings */; };
 		EB7A7DAD17B008B70011A137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7A7DAC17B008B70011A137 /* main.m */; };
@@ -27,6 +25,8 @@
 		EB7A7DC217B008B70011A137 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DC117B008B70011A137 /* SenTestingKit.framework */; };
 		EB7A7DC317B008B70011A137 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A7DA017B008B70011A137 /* Cocoa.framework */; };
 		EB7A7DCB17B008B70011A137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7A7DC917B008B70011A137 /* InfoPlist.strings */; };
+		EBCEF18617BD7A130005B619 /* ALFLight.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCEF18517BD7A130005B619 /* ALFLight.m */; };
+		EBCEF18917BD7A310005B619 /* ALFProject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCEF18817BD7A310005B619 /* ALFProject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +52,10 @@
 		BCD3DD5717B2847300B6F55B /* ALFLightService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFLightService.m; path = Services/ALFLightService.m; sourceTree = "<group>"; };
 		EB05DCB517B1784C00ED8051 /* ALFLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFLightView.h; path = Views/ALFLightView.h; sourceTree = "<group>"; };
 		EB05DCB617B1784C00ED8051 /* ALFLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFLightView.m; path = Views/ALFLightView.m; sourceTree = "<group>"; };
-		EB05DCB817B17D2600ED8051 /* ALFMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFMenuController.h; path = Controllers/ALFMenuController.h; sourceTree = "<group>"; };
-		EB05DCB917B17D2600ED8051 /* ALFMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFMenuController.m; path = Controllers/ALFMenuController.m; sourceTree = "<group>"; };
 		EB33A1D017B12FE900D788CE /* ALFDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFDataTests.h; sourceTree = "<group>"; };
 		EB33A1D117B12FE900D788CE /* ALFDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFDataTests.m; sourceTree = "<group>"; };
 		EB33A1D617B1386A00D788CE /* ALFAbstractDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFAbstractDataTests.h; sourceTree = "<group>"; };
 		EB33A1D717B1386A00D788CE /* ALFAbstractDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFAbstractDataTests.m; sourceTree = "<group>"; };
-		EB77FD1A17BBB2A8001D24BF /* ALFMenuControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFMenuControllerTests.h; sourceTree = "<group>"; };
-		EB77FD1B17BBB2A8001D24BF /* ALFMenuControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFMenuControllerTests.m; sourceTree = "<group>"; };
 		EB7A7D9D17B008B70011A137 /* Alfred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alfred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7A7DA017B008B70011A137 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EB7A7DA317B008B70011A137 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +74,10 @@
 		EB7A7DC117B008B70011A137 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB7A7DC817B008B70011A137 /* AlfredTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlfredTests-Info.plist"; sourceTree = "<group>"; };
 		EB7A7DCA17B008B70011A137 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EBCEF18417BD7A130005B619 /* ALFLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFLight.h; path = Models/ALFLight.h; sourceTree = "<group>"; };
+		EBCEF18517BD7A130005B619 /* ALFLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFLight.m; path = Models/ALFLight.m; sourceTree = "<group>"; };
+		EBCEF18717BD7A310005B619 /* ALFProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALFProject.h; path = Models/ALFProject.h; sourceTree = "<group>"; };
+		EBCEF18817BD7A310005B619 /* ALFProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALFProject.m; path = Models/ALFProject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +143,7 @@
 		EB7A7DA617B008B70011A137 /* Alfred */ = {
 			isa = PBXGroup;
 			children = (
+				EBCEF18317BD79F60005B619 /* Models */,
 				EBF560AF17BA77FB009C5380 /* Controllers */,
 				EBF560B017BA7806009C5380 /* Views */,
 				EBF560AE17BA77EA009C5380 /* Services */,
@@ -179,8 +180,6 @@
 				BCD3DD5417B2831700B6F55B /* ALFLightServiceTests.m */,
 				BC78ABC717B2A5080060BC88 /* ALFLightControllerTests.h */,
 				BC78ABC817B2A5080060BC88 /* ALFLightControllerTests.m */,
-				EB77FD1A17BBB2A8001D24BF /* ALFMenuControllerTests.h */,
-				EB77FD1B17BBB2A8001D24BF /* ALFMenuControllerTests.m */,
 			);
 			path = AlfredTests;
 			sourceTree = "<group>";
@@ -192,6 +191,17 @@
 				EB7A7DC917B008B70011A137 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBCEF18317BD79F60005B619 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEF18417BD7A130005B619 /* ALFLight.h */,
+				EBCEF18517BD7A130005B619 /* ALFLight.m */,
+				EBCEF18717BD7A310005B619 /* ALFProject.h */,
+				EBCEF18817BD7A310005B619 /* ALFProject.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		EBF560AE17BA77EA009C5380 /* Services */ = {
@@ -208,8 +218,6 @@
 			children = (
 				BC78ABC417B2A4D10060BC88 /* ALFLightController.h */,
 				BC78ABC517B2A4D10060BC88 /* ALFLightController.m */,
-				EB05DCB817B17D2600ED8051 /* ALFMenuController.h */,
-				EB05DCB917B17D2600ED8051 /* ALFMenuController.m */,
 				BC90EB6717BC042100DC3DCA /* ALFLightsArrayController.h */,
 				BC90EB6817BC042100DC3DCA /* ALFLightsArrayController.m */,
 			);
@@ -339,9 +347,10 @@
 				EB7A7DBA17B008B70011A137 /* Alfred.xcdatamodeld in Sources */,
 				BCD3DD5817B2847300B6F55B /* ALFLightService.m in Sources */,
 				EB05DCB717B1784C00ED8051 /* ALFLightView.m in Sources */,
-				EB05DCBA17B17D2600ED8051 /* ALFMenuController.m in Sources */,
 				BC78ABC617B2A4D10060BC88 /* ALFLightController.m in Sources */,
 				BC90EB6917BC042100DC3DCA /* ALFLightsArrayController.m in Sources */,
+				EBCEF18617BD7A130005B619 /* ALFLight.m in Sources */,
+				EBCEF18917BD7A310005B619 /* ALFProject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +362,6 @@
 				EB33A1D817B1386A00D788CE /* ALFAbstractDataTests.m in Sources */,
 				BCD3DD5517B2831700B6F55B /* ALFLightServiceTests.m in Sources */,
 				BC78ABC917B2A5080060BC88 /* ALFLightControllerTests.m in Sources */,
-				EB77FD1C17BBB2A8001D24BF /* ALFMenuControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

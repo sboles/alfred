@@ -7,7 +7,6 @@
 //
 
 #import "ALFAppDelegate.h"
-#import "ALFMenuController.h"
 
 @implementation ALFAppDelegate
 

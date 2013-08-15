@@ -7,10 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ALFMenuController.h"
+#import "ALFLight.h"
+
+@class ALFLightService;
 
 @interface ALFLightsArrayController : NSArrayController
 
-@property (weak) IBOutlet ALFMenuController *menuController;
+@property (weak) IBOutlet ALFLightService *lightService;
+@property NSMutableDictionary *lightControllers;
 
 @end
