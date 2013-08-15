@@ -15,14 +15,14 @@
     ALFMenuController *controller = [[ALFMenuController alloc] init];
     [controller setLightService:service];
     [controller setManagedObjectContext:self.moc];
-    [controller initializeLights];
+    [ALFLight initializeLightsUsingContext:self.moc];
     NSArray *lights = [ALFLight allLightsUsingContext:self.moc];
     const NSUInteger expectedLength = 1;
     STAssertEquals([lights count], expectedLength, @"should have one initialized lights");
     STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");
     STAssertTrue([[[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"projects"] count] == 8, @"alm light project count should be %d", 7);
     
-    [controller initializeLights];
+    [ALFLight initializeLightsUsingContext:self.moc];
     lights = [ALFLight allLightsUsingContext:self.moc];
     STAssertEquals([lights count], expectedLength, @"should have one initialized lights");
     STAssertEqualObjects([[self getLightWithName:@"alm" fromAllLights:lights] valueForKey:@"name"], @"alm", @"light name should be alm");

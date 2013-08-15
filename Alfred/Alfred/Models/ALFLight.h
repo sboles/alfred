@@ -12,5 +12,6 @@
 
 + (id) lightWithName:(NSString *)name usingContext:(NSManagedObjectContext *)managedObjectContext;
 + (NSArray *)allLightsUsingContext:(NSManagedObjectContext*)managedObjectContext;
++ (void)initializeLightsUsingContext:(NSManagedObjectContext*)managedObjectContext;
 
 @end
