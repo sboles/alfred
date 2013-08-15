@@ -14,6 +14,8 @@
     BOOL _status;
 }
 
++ (id)lightView;
+
 - (id)initWithStatusItem:(NSStatusItem *)statusItem overallStatus:(BOOL)status;
 
 @property(nonatomic) BOOL status;

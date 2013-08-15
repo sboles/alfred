@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ALFLightView.h"
-#import "ALFApplicationContext.h"
 #import "ALFLightService.h"
 
 @interface ALFLightController : NSObject {

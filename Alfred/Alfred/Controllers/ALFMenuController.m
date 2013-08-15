@@ -20,7 +20,7 @@
     NSArray *lights = [self allLights];
     for (NSManagedObject *light in lights) {
         //create lightcontrollers
-        ALFLightView *view = [ALFApplicationContext makeLightView];
+        ALFLightView *view = [ALFLightView lightView];
         ALFLightController *lightController = [[ALFLightController alloc] initWith:light withView:view withService:self.lightService];
         [lightController setUpdateInterval:30];
         [self addObject:lightController];

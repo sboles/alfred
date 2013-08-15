@@ -13,7 +13,7 @@
 - (ALFLightController *)makeController {
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
-    ALFLightView *view = [ALFApplicationContext makeLightView];
+    ALFLightView *view = [ALFLightView lightView];
     ALFLightService *lightService = [[ALFLightService alloc] init];
     controller = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
     return controller;
@@ -27,7 +27,7 @@
 - (void)testCheckLightStatus {
     ALFLightController *controller;
     NSManagedObject *light = [self makeLight];
-    ALFLightView *view = [ALFApplicationContext makeLightView];
+    ALFLightView *view = [ALFLightView lightView];
     [view setStatus:NO];
     ALFLightService *lightService = [[ALFLightService alloc] init];
     controller = [[ALFLightController alloc] initWith:light withView:view withService:lightService];
