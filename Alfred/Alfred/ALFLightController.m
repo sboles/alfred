@@ -32,4 +32,8 @@
     [_timer fire];
 }
 
+- (void)removeLight {
+    [_lightView removeLight];
+}
+
 @end

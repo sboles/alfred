@@ -16,4 +16,8 @@
 @property (weak) IBOutlet ALFLightService *lightService;
 @property NSMutableDictionary *lightControllers;
 
+- (IBAction)addLight:(id)sender;
+- (IBAction)removeLight:(id)sender;
+- (IBAction)lightSelected:(id)sender;
+
 @end

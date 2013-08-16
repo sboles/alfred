@@ -24,4 +24,6 @@
 
 - (void)setUpdateInterval:(NSTimeInterval)seconds;
 
+- (void)removeLight;
+
 @end

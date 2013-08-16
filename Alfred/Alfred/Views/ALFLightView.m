@@ -31,7 +31,7 @@
     return self;
 }
 
-- (void)dealloc {
+- (void)removeLight {
     [[NSStatusBar systemStatusBar] removeStatusItem:_statusItem];
 }
 

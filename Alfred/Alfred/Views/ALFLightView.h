@@ -18,6 +18,8 @@
 
 - (id)initWithStatusItem:(NSStatusItem *)statusItem overallStatus:(BOOL)status;
 
+- (void) removeLight;
+
 @property(nonatomic) BOOL status;
 
 @end
